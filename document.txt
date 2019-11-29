@@ -1,0 +1,48 @@
+1) Api Structure:
+/task - get, put, post, delete
+
+{
+  "task": {
+    "title": "Task Name",
+    "desc": "Description of the task",
+    "state": [
+      "LP",
+      "LP",
+      "UI",
+      "NI",
+      "NN",
+      "UN",
+      "RP",
+      "DEL"
+    ]
+  }
+}
+
+API's ->
+1) GET
+    URL: http://localhost:3000/task?searchBy=ObjectId&searchParam=5ddf58de562a6703ce97b45c
+        or
+    URL: http://localhost:3000/task?searchBy=name&searchParam=garuna
+
+2) PUT
+    URL: http://localhost:3000/task?searchBy=ObjectId&searchParam=5ddf58de562a6703ce97b45c
+        or
+    URL: http://localhost:3000/task?searchBy=name&searchParam=garuna
+    {
+        "updateQuery": {
+            "name": "aditya"
+        }
+    }
+
+3) POST
+   URL: http://localhost:3000/task
+   body: {
+               "name": "anurag",
+               "group": "J6",
+               "leaderName": "Aditya"
+             };
+
+4) DELETE body
+    URL: http://localhost:3000/task?searchBy=ObjectId&searchParam=5ddf58de562a6703ce97b45c
+        or
+    URL: http://localhost:3000/task?searchBy=name&searchParam=anurag

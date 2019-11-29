@@ -1,0 +1,139 @@
+
+<div class="nestedDemo row" ng-controller="NestedListsDemoController">
+    <div  class="mid-section1 col-md-2">
+        <div class=" dropzone toolbox box box-grey box-padding taskToDo">
+            <h3>All Tasks</h3>
+            <ul>
+                <!-- The toolbox only allows to copy objects, not move it. After a new
+                     element was created, dnd-copied is invoked and we generate the next id -->
+                <li ng-repeat="item in models.tasksOpen"
+                    dnd-draggable="item"
+                    class="pad5">
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="alarmDiv" ng-controller = "alarmController" class="col-md-12 paddingNone">
+                <div>
+                    Set Time: <input type ="time" id="myTime">
+                    <button title="Set a Reminder" ng-click = setReminder()><i class="fas fa-clock"></i></button>
+                </div>
+        </div>
+    </div>
+    <div  class="mid-section2 col-md-8">
+        <!--  Second Section -->
+        <div class="addTask col-md-12">
+            <div class="newTaskBar">
+                <input type="text" name="taskDescription" ng-model="taskTitle" placeholder="Add a Note..">
+                <button type="button" class="btn btn-default" ng-click="addTask()">Add Task</button>
+            </div>
+        </div>
+        <script type="text/ng-template" id="container.html">
+            <div class="container-element box box-blue">
+                <ul dnd-list="container.columns"
+                    dnd-external-sources="true"
+                    dnd-effect-allowed="move"
+                    dnd-drop="onDrop(container, item)">
+                    <li ng-repeat="item in container.columns"
+                        id="{{item._id}}"
+                        dnd-draggable="item"
+                        dnd-type="'item'"
+                        dnd-effect-allowed="move"
+                        dnd-selected="models.selected = item"
+                        ng-class="{selected: models.selected === item}"
+                        class="item"
+                    >{{item.name}}
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </script>
+        <div class="taskSection col-md-12 paddingNone">
+            <div class="col-md-1 height100 paddingNone">
+                <div>
+                    <h3 class="quadrantHeading verticalText" style="border-right: solid 1px #faebcc;margin-top: 39px;">Important</h3>
+                    <h3 class="quadrantHeading verticalText">Not Important</h3>
+                </div>
+            </div>
+            <div class="col-md-11 height100 paddingNone">
+                <div class="row">
+                    <div ng-repeat="(zone, containers) in models.dropzones">
+                        <div class="dropzone box box-yellow">
+                            <div>
+                                <h3 class="quadrantHeading urgentQuadrant col-md-6" style="border-right: solid 1px #faebcc;">Urgent</h3>
+                                <h3 class="quadrantHeading col-md-6 notUrgentQuadrant">Not Urgent</h3>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <ul dnd-list="containers"
+                                dnd-allowed-types="['container']"
+                                dnd-external-sources="true"
+                                class="containerList">
+                                <li ng-repeat="container in containers"
+                                    id="container{{container.id}}"
+                                    dnd-effect-allowed="move"
+                                    dnd-selected="models.selected = container"
+                                    ng-class="{selected: models.selected === container}"
+                                    ng-include="container.type + '.html'"
+                                    style="width: 49.8%;display: inline-block; min-height: 190px;max-height: 190px;overflow-y: scroll;">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div >
+    <div  class="mid-section3 col-md-2">
+        <div class=" dropzone toolbox box box-grey box-padding taskDone">
+            <h3>Task Done</h3>
+            <ul dnd-list="[]"
+                dnd-external-sources="true"
+                dnd-effect-allowed="move"
+                dnd-drop="onDropDone(item)">
+                <!-- The toolbox only allows to copy objects, not move it. After a new
+                     element was created, dnd-copied is invoked and we generate the next id -->
+                <li ng-repeat="item in models.tasksDone"
+                    dnd-draggable="item"
+                    class="pad5">
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="trashcan box box-grey box-padding">
+            <!-- If you use [] as referenced list, the dropped elements will be lost -->
+            <h3>Trashcan</h3>
+            <ul dnd-list="[]"
+                dnd-external-sources="true"
+                dnd-effect-allowed="move"
+                dnd-drop="onDropTrash(item)">
+                <li><img src="nested/trashcan.jpg"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+<!--    <div class="col-md-2">-->
+
+<!--        <div class="toolbox box box-grey box-padding">-->
+<!--            <h3>New Elements</h3>-->
+<!--            <ul>-->
+<!--                &lt;!&ndash; The toolbox only allows to copy objects, not move it. After a new-->
+<!--                     element was created, dnd-copied is invoked and we generate the next id &ndash;&gt;-->
+<!--                <li ng-repeat="item in models.templates"-->
+<!--                    dnd-draggable="item"-->
+<!--                    dnd-effect-allowed="copy"-->
+<!--                    dnd-copied="item.id = item.id + 1"-->
+<!--                >-->
+<!--                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.type}}</button>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+</div>
+
+

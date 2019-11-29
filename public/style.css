@@ -1,0 +1,383 @@
+
+.box {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.box > h3, .quadrantHeading {
+    color: #333;
+    border-color: #ddd;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    background-repeat: repeat-x;
+    display: block;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.box-padding {
+    padding: 15px;
+}
+
+.box-padding > h3 {
+    margin: -15px;
+    margin-bottom: 15px;
+}
+
+.box-grey {
+    border-color: #ddd;
+}
+
+.box-grey > h3 {
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
+    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
+}
+
+.box-blue {
+    border-color: #bce8f1;
+}
+
+.box-blue > h3 {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    background-image: -webkit-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);
+    background-image: linear-gradient(to bottom,#d9edf7 0,#c4e3f3 100%);
+}
+
+.box-yellow {
+    border-color: #faebcc;
+    margin-bottom:0px;
+}
+
+.quadrantHeading {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    text-align: center;
+    background-image: -webkit-linear-gradient(top,#fcf8e3 0,#faf2cc 100%);
+    background-image: linear-gradient(to bottom,#fcf8e3 0,#faf2cc 100%);
+}
+
+.urgentQuadrant{
+    width: 49.8%;
+}
+
+.notUrgentQuadrant{
+    float: right;
+    width: 49.8%;
+}
+
+
+/***************************** Dropzone Styling *****************************/
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.nestedDemo .dropzone ul[dnd-list] {
+    margin: 0px;
+    min-height: 36px;
+    padding-left: 0px;
+}
+
+.nestedDemo .dropzone li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    padding: 0px;
+}
+
+/**
+ * Reduce opacity of elements during the drag operation. This allows the user
+ * to see where he is dropping his element, even if the element is huge. The
+ * .dndDragging class is automatically set during the drag operation.
+ */
+.nestedDemo .dropzone .dndDragging {
+    opacity: 0.7;
+}
+
+/**
+ * The dndDraggingSource class will be applied to the source element of a drag
+ * operation. It makes sense to hide it to give the user the feeling that he's
+ * actually moving it. Note that the source element has also .dndDragging class.
+ */
+.nestedDemo .dropzone .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be added as child of the dnd-list
+ * while the user is dragging over it.
+ */
+.nestedDemo .dropzone .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 42px;
+}
+
+/***************************** Element Selection *****************************/
+
+.nestedDemo .dropzone .selected .item {
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.nestedDemo .dropzone .selected .box {
+    border-color: #d6e9c6;
+}
+
+.nestedDemo .dropzone .selected .box > h3 {
+    background-color: #dff0d8;
+    background-image: linear-gradient(to bottom,#dff0d8 0,#d0e9c6 100%);
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+/***************************** Element type specific styles *****************************/
+
+.nestedDemo .dropzone .item {
+    padding: 7px 10px;
+}
+
+.nestedDemo .dropzone .container-element {
+    margin: 10px;
+}
+
+.nestedDemo .dropzone .container-element .column {
+    float: left;
+    width: 100%;
+}
+
+#container2, #container4{
+    float: right;
+}
+
+/***************************** Toolbox *****************************/
+
+.nestedDemo .toolbox ul {
+    cursor: move;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px
+}
+
+.nestedDemo .toolbox ul li {
+    margin-bottom: 5px
+}
+
+.nestedDemo .toolbox button {
+    margin: 5px;
+    opacity: 1.0;
+    width: 123px;
+}
+
+.nestedDemo .toolbox .dndDragging {
+    opacity: 0.5;
+}
+
+.nestedDemo .toolbox .dndDraggingSource {
+    opacity: 1.0;
+}
+
+/***************************** Trashcan *****************************/
+
+.nestedDemo .trashcan ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.nestedDemo .trashcan img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+    width: 150px;
+    height: 175px;
+}
+
+.nestedDemo .trashcan .dndDragover img {
+    width: 100%;
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+
+.nestedDemo .trashcan .dndPlaceholder {
+    display: none;
+}
+
+.trashcan, .taskToDo, .taskDone {
+    margin: 10px 6px 10px;
+}
+
+
+.containerList {
+    height: 385px;
+    background: #d7d7d7;
+}
+
+.mid-section1, .mid-section3 {
+    background-color: #F1F3F4;
+    min-height: 546px;
+    max-height: 546px;
+}
+
+.overflowScroll{
+    overflow-y: auto;
+}
+
+.mid-section2 {
+    background-color: white;
+    height:546px;
+}
+
+.midBody {
+    height: 546px;
+}
+
+.addTask{
+    height: 15%;
+    background-color: #F1F3F4;
+}
+
+.taskSection{
+    height: 81%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.taskSection .col-md-1{
+    width: 6%;
+}
+
+.taskSection .col-md-11{
+    width: 94%;
+}
+
+.height100{
+  height:100%;
+}
+
+
+.quad-section {
+    width: 400px;
+    height: 200px;
+}
+
+.bYellow {
+    background-color: yellow;
+}
+
+.bRed {
+    background-color: red;
+}
+
+.bGreen {
+    background-color: green;
+}
+
+.bBlue {
+    background-color: blue;
+}
+
+.floatL{
+    float: left;
+}
+
+.floatR{
+    float: right;
+}
+
+.tasksCompleted{
+    min-height: 260px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.row{
+    margin: 0px;
+}
+
+.paddingNone{
+    padding-right: 0px;
+    padding-left:0px;
+}
+
+.verticalText{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: inline-block;
+    margin-right: 0px;
+    margin-left: 0px;
+    height: 188px;
+    transform: rotate(180deg);
+    text-align: center;
+}
+
+/*****************************Header*****************************/
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    height: 50px;
+    background: #FEEFC3;
+}
+
+/* Style the header links */
+.logo {
+    float: left;
+    color: black;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.date {
+    margin: 14px 0px 12px;
+    padding: 0px 12px;
+    font-size: 20px;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+}
+
+.alarmDiv {
+    position: absolute;
+    bottom: 10px;
+    margin: 0px 10px 5px;
+}
+
+.pad5{
+    padding: 5px 5px !important;
+}
+
+.newTaskBar{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.newTaskBar input {
+    padding: 8px 10px 8px;
+    width: 70%;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+}
+
+.newTaskBar button{
+    width: 25%;
+    padding: 8px 10px 8px;
+}

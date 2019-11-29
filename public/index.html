@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do It: An App for Achievers</title>
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="vendor/angular-drag-and-drop-lists.js"></script>
+    <script src="app.js"></script>
+    <script src="nested/nested.js"></script>
+    <script src="nested/SharedService.js"></script>
+    <script src="nested/CommonService.js"></script>
+    <script src="alarmController.js"></script>
+    <script type="text/javascript" src="vendor/web-notification.js"></script>
+
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-theme.min.css">
+    <link href="vendor/font-awesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <script defer src="vendor/font-awesome/js/all.js"></script> <!--load all styles -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body ng-app="app">
+<div>
+    <div class="header">
+        <h3 class="logo"><i>Do It</i></h3>
+        <div class="header-right">
+            <h3 class="date"><strong>Date:</strong> <span id="time"></span></h3>
+        </div>
+    </div>
+</div>
+    <div class="midBody">
+        <div ng-include="'nested/nested.html'"></div>
+    </div>
+</body>
+</html>
